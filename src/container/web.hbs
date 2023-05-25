@@ -1,0 +1,192 @@
+{{#with web}}
+
+    <h1><big>HTML</big></h1>
+
+    {{#with languages.[0]}}
+
+        <p>Name - {{name}}</p>
+        <p>Version - {{version}}</p>
+        <p>Description - {{description}}</p>
+        <br><h2>Elements:</h2><br>
+            {{#with elements.[0] }}
+            
+                <p>Name - {{name}}</p>
+                <p>Description - {{description}}</p>
+
+            <p>Attributes:</p>
+            {{#with attributes.[0] }}
+            <ul>
+                <li>
+                    <p>Name - {{name}}</p>
+                </li>
+                <li>
+                    <p>Description - {{description}}</p>
+                </li>
+            </ul>
+            {{/with}}<br>
+            
+            {{#with attributes.[1] }}
+            <ul>
+                <li>
+                    <p>Name - {{name}}</p>
+                </li>
+                <li>
+                    <p>Description - {{description}}</p>
+                </li>
+            </ul>
+            {{/with}}<br>
+
+            {{/with}}
+
+            {{#with elements.[1]}}
+
+                <p>Name - {{name}}</p>
+                <p>Description - {{description}}</p>
+
+                <p>Attributes:</p>
+                {{#with attributes.[0] }}
+                <ul>
+                    <li>
+                        <p>Name - {{name}}</p>
+                    </li>
+                    <li>
+                        <p>Description - {{description}}</p>
+                    </li>
+                </ul>
+                {{/with}}<br>
+                
+                {{#with attributes.[1] }}
+                <ul>
+                    <li>
+                        <p>Name - {{name}}</p>
+                    </li>
+                    <li>
+                        <p>Description - {{description}}</p>
+                    </li>
+                </ul>
+                {{/with}}<br>
+
+            {{/with}}
+    
+    {{/with}}
+
+    <hr>
+
+    <h1><big>CSS</big></h1>
+
+    {{#with languages.[1]}}
+
+        <p>Name - {{name}}</p>
+        <p>Version - {{version}}</p>
+        <p>Description - {{description}}</p>
+        <br><h2>Properties:</h2><br>
+
+        {{#with properties.[0]}}
+
+            <p>Name - {{name}}</p>
+            <p>Description - {{description}}</p>
+
+            {{#with values.[0] }}
+            <ul>
+                <li>
+                    <p>Value - {{value}}</p>
+                </li>
+                <li>
+                    <p>Description - {{description}}</p>
+                </li>
+            </ul>
+            {{/with}}<br>
+
+            {{#with values.[1] }}
+            <ul>
+                <li>
+                    <p>Value - {{value}}</p>
+                </li>
+                <li>
+                    <p>Description - {{description}}</p>
+                </li>
+            </ul>
+            {{/with}}<br>
+
+        {{/with}}
+
+            {{#with properties.[1]}}
+            
+            <p>Name - {{name}}</p>
+            <p>Description - {{description}}</p>
+            
+            {{#with values.[0] }}
+            <ul>
+                <li>
+                    <p>Value - {{value}}</p>
+                </li>
+                <li>
+                    <p>Description - {{description}}</p>
+                </li>
+            </ul>
+            {{/with}}<br>
+            
+            {{#with values.[1] }}
+            <ul>
+                <li>
+                    <p>Value - {{value}}</p>
+                </li>
+                <li>
+                    <p>Description - {{description}}</p>
+                </li>
+            </ul>
+            {{/with}}<br>
+            
+            {{/with}}
+
+    
+    {{/with}}
+
+    <hr>
+
+    <h1><big>JavaScript</big></h1>
+
+    {{#with languages.[2]}}
+    
+        <p>Name - {{name}}</p>
+        <p>Version - {{version}}</p>
+        <p>Description - {{description}}</p>
+        <br><h2>Functions:</h2><br>
+
+        {{#with functions.[0]}}
+
+            <p>Name - {{name}}</p>
+            <p>Description - {{description}}</p>
+            
+            <p>Parametrs:</p>
+            {{#with parameters.[0]}}
+
+                <p>Name - {{name}}</p>
+                <p>Type - {{type}}</p>
+                <p>Description - {{description}}</p>
+
+            {{/with}}
+
+
+        {{/with}}<br>
+
+        {{#with functions.[1]}}
+
+            <p>Name - {{name}}</p>
+            <p>Description - {{description}}</p>
+
+            <p>Parametrs:</p>
+            {{#with parameters.[0]}}
+            
+            <p>Name - {{name}}</p>
+            <p>Type - {{type}}</p>
+            <p>Description - {{description}}</p>
+            
+            {{/with}}
+
+        {{/with}}
+
+
+    {{/with}}
+
+{{/with}}

@@ -1,0 +1,116 @@
+<h1>Name - {{name}}</h1>
+<div>
+<big> <p>{{description}}</p>
+    <p>Price - {{price}}</p>
+    <p>Category - {{category}}</p></big>
+</div>
+{{#with features}}
+       <hr> <h2>Processor</h2>
+    {{#with processor}}
+    
+        <p>brand - {{brand}}</p>
+        <p>model - {{model}}</p>
+        <p>speed - {{speed}}</p>
+        <p>cores - {{cores}}</p>
+        <p>cache - {{cache}}</p>
+
+    {{/with}}
+        <hr>
+        <h2>Memory</h2>
+    {{#with memory}}
+    
+    <p>type - {{type}}</p>
+    <p>size - {{size}}</p>
+    <p>speed - {{speed}}</p>
+    
+    {{/with}}
+
+    <hr><h2>Storage</h2>
+    {{#with storage}}
+    
+    <p>type - {{type}}</p>
+    <p>size - {{size}}</p>
+    
+    {{/with}}
+
+    <hr>
+    <h2>Display</h2>
+    {{#with display}}
+    
+    <p>size - {{size}}</p>
+    <p>resolution - {{resolution}}</p>
+    <p>technology - {{technology}}</p>
+    <p>color_space - {{color_space}}</p>
+    <p>brightness - {{brightness}}</p>
+    <p>refresh_rate - {{refresh_rate}}</p>
+    {{/with}}
+
+    <hr>
+    <h2>Graphics</h2>
+    {{#with graphics}}
+    
+    <p>brand - {{brand}}</p>
+    <p>model - {{model}}</p>
+    <p>memory - {{memory}}</p>
+    
+    {{/with}}
+
+    <hr>
+    <h2>Ports</h2>
+    {{#with ports.[0]}}
+    
+    <p>type - {{type}}</p>
+    <p>count - {{count}}</p>
+            <h2>Features</h2>
+            {{#each features}}
+                <ul>{{this}}</ul>
+            {{/each}}
+    
+    {{/with}}
+
+    {{#with ports.[1]}}
+    
+    <p>type - {{type}}</p>
+    <p>count - {{count}}</p>
+    
+    {{/with}}
+
+    <hr>
+    <h2>Battery</h2>
+    {{#with battery}}
+    
+    <p>type - {{type}}</p>
+    <p>capacity - {{capacity}}</p>
+    <p>life - {{life}}</p>
+    
+    {{/with}}
+
+    <hr><big><p>Weight of device - {{weight}}</p></big><hr>
+
+    <h2>Dimensions</h2>
+    {{#with dimensions}}
+    
+    <p>height - {{height}}</p>
+    <p>width - {{width}}</p>
+    <p>depth - {{depth}}</p>
+    
+    {{/with}}
+
+        <hr><big>
+            <p>Operating system - {{operating_system}}</p>
+        </big>
+        <hr>
+
+        <h2>Accessories</h2>
+
+    {{#each accessories}}
+
+        {{#with []}}
+
+            <p>{{name}} - {{price}}</p>
+
+        {{/with}}
+
+    {{/each}}
+
+{{/with}}

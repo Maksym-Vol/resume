@@ -1,0 +1,107 @@
+{{#with program.excursion }}
+    
+    <big><h1>{{ name }}</h1></big>
+    <h2>Location</h2>
+    {{#with location}}
+        <b><P> {{city}}, {{country}}</P></b>
+    {{/with}}
+    <p>{{date}}</p>
+ <br><hr><br>   
+
+    <h2>Program (part 1)</h2>
+
+    {{#with program.[0]}}
+
+        <p>Name - {{name}}</p>
+        <p>Type - {{type}}</p>
+        <p>Duration - {{duration}}</p>
+<br><hr><br>
+    <h2>Details</h2>
+        {{#with details.museum}}
+
+                    <b><p>Museum name - {{name}}</p></b>
+                    <h3>Location:</h3>
+                {{#with location}}
+                    <address>
+                    <p>Address - {{address}}</p>
+                    <p>City - {{city}}</p>
+                    <p>Country - {{country}}</p>
+                    </address>
+                {{/with}}
+
+                <h3>Exhibits</h3>
+                {{#with exhibits}}
+                <p>First exhibition:</p>
+                    {{#each [0]}}
+                        <ul><li>{{this}}</li></ul>
+                    {{/each}}
+                        <p>Second exhibition:</p>
+                    {{#each [1]}}
+                    <ul><li>{{this}}</li></ul>
+                    {{/each}}
+                {{/with}}
+
+        {{/with}} {{!--details.museum--}}
+
+                <h3>Guide</h3>
+                    {{#with details.guide}}
+                        <p>Name - {{name}}</p>
+                        <p>Language - {{language}}</p>
+                        <p>Rating - {{rating}}</p>
+                    {{/with}}
+
+
+     {{/with}} {{!--program.[0] --}}
+
+                <br><hr><hr><br>
+            <h2>Program (part 2)</h2>
+
+        {{#with program.[1]}}
+
+                <p>Name - {{name}}</p>
+                <p>Type - {{type}}</p>
+                <p>Duration - {{duration}}</p>
+
+                <br><hr><br>
+
+                {{#with details}}
+                {{#with venue}}
+
+                <b>
+                    <p>Performance - {{name}}</p>
+                </b>
+                <h3>Location:</h3>
+                            {{#with location}}
+                                <address>
+                                    <p>Address - {{address}}</p>
+                                    <p>City - {{city}}</p>
+                                    <p>Country - {{country}}</p>
+                                </address>
+                            {{/with}}
+                {{/with}} {{!--details.venue--}}
+
+                <h3>Performers</h3>
+                
+                {{#with performers }}
+                
+                    <p>Name - {{[0].name}}</p>
+                    <p>Type - {{[0].type}}</p>
+                    <br>
+                    <p>Name - {{[1].name}}</p>
+                    <p>Type - {{[1].type}}</p>
+                
+                {{/with}}
+
+                <h3>Guide</h3>
+                {{#with guide}}
+                <p>Name - {{name}}</p>
+                <p>Language - {{language}}</p>
+                <p>Rating - {{rating}}</p>
+                {{/with}}
+
+            {{/with}}
+
+        {{/with}} {{!--program.[1] --}}
+
+{{/with}}
+  
