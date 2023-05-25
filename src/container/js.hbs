@@ -1,0 +1,184 @@
+<h1>Name - {{name}}</h1>
+
+<p>Description - {{description}}</p>
+
+{{#with history}}
+
+<p>Year - {{year}}</p>
+<p>Founder - {{founder}}</p>
+
+{{/with}}
+
+<br>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Types
+    </button>
+    <ul class="dropdown-menu">
+        {{#each types }}
+
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+
+        {{/each}}
+    </ul>
+</div>
+<br><br>
+
+<h2>Syntax:</h2><br>
+
+{{#with syntax}}
+<div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Variables
+    </button>
+    <ul class="dropdown-menu">
+        <h4>Variables:</h4>
+        {{#each variables }}
+        
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+        
+        {{/each}}
+    </ul>
+</div>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Functions
+    </button>
+    <ul class="dropdown-menu">
+        <h4>Functions:</h4>
+        {{#each functions }}
+        
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+        
+        {{/each}}
+
+</div>
+
+
+<div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Conditionals
+    </button>
+    <ul class="dropdown-menu">
+        <h4>Conditionals:</h4>
+        {{#each conditionals }}
+
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+
+        {{/each}}
+
+</div>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+       Loops
+    </button>
+    <ul class="dropdown-menu">
+        <h4>Loops:</h4>
+        {{#each loops }}
+
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+
+        {{/each}}
+
+</div>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Classes
+    </button>
+    <ul class="dropdown-menu">
+        <h4>Classes:</h4>
+        {{#each loops }}
+
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+
+        {{/each}}
+
+</div>
+
+{{/with}}<br><br><br>
+
+
+<div class="btn-group">
+    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Features
+    </button>
+    <ul class="dropdown-menu">
+        {{#each features }}
+        
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+        
+        {{/each}}
+
+    </ul>
+</div>
+
+<div class="btn-group">
+    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Libraries
+    </button>
+    <ul class="dropdown-menu">
+        {{#each libraries }}
+        
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+        
+        {{/each}}
+    </ul>
+</div>
+
+
+<div class="btn-group">
+    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Tools
+    </button>
+    <ul class="dropdown-menu">
+        {{#each tools }}
+
+        <ul>
+            <li>{{this}}</li>
+        </ul>
+
+        {{/each}}
+    </ul>
+</div>
+
+<br>
+<br>
+<br>
+
+<h4>Community:</h4>
+
+{{#each community}}
+
+<ul>
+    <li>
+        <P>Name - {{name}}</P>
+        <p>Type - {{type}}</p>
+        <br>
+    </li>
+</ul>
+
+{{/each}}
+

@@ -1,0 +1,134 @@
+<h1>{{name}}</h1>
+
+{{#with users}}
+
+    {{#with [0]}}
+
+            <big><p>User</p></big>
+            <p>id - {{id}}</p>
+            <p>name - {{name}}</p>
+            <p>gender - {{gender}}</p>
+            <p>age - {{age}}</p> 
+
+                {{#each friends}}
+
+                        <h2>Friend</h2>
+                    <p>id - {{id}}</p>
+                    <p>name - {{name}}</p>
+                    <p>gender - {{gender}}</p>
+                    <p>age - {{age}}</p>
+
+                        {{#with mutual_friends.[0]}}
+
+                        <h3>Mutual friend</h3>
+                        
+                                <p>id - {{id}}</p>
+                                <p>name - {{name}}</p>
+                                <p>gender - {{gender}}</p>
+                                <p>age - {{age}}</p>
+                        
+                        {{/with}}
+
+                {{/each}}
+                
+                <br>
+
+                <br><h2>Groups:</h2>
+            {{#each groups}}
+
+                {{#with []}}
+                    <h2>Group:</h2>
+                    <p>id - {{id}}</p>
+                    <p>name - {{name}}</p>
+                    <p>description - {{description}}</p>
+                           
+                                {{#each members}}
+                                    <ul><h2>Member:</h2>
+                                    <p>id - {{id}}</p>
+                                    <p>name - {{name}}</p>
+                                    <p>gender - {{gender}}</p>
+                                    <p>age - {{age}}</p></ul>
+                                {{/each}}
+
+                {{/with}}<br><br>
+
+            {{/each}}
+
+
+
+
+
+    {{/with}}<hr><hr><hr><hr>
+
+    {{#with [1]}}
+
+                <big>
+                    <p>User</p>
+                </big>
+                <p>id - {{id}}</p>
+                <p>name - {{name}}</p>
+                <p>gender - {{gender}}</p>
+                <p>age - {{age}}</p>
+                
+            {{#each friends}}
+                
+                <h2>Friend</h2>
+                <p>id - {{id}}</p>
+                <p>name - {{name}}</p>
+                <p>gender - {{gender}}</p>
+                <p>age - {{age}}</p>
+                
+                    {{#with mutual_friends}}
+                        {{#each []}}
+                        <h3>Mutual friend</h3>
+                        
+                        <p>id - {{id}}</p>
+                        <p>name - {{name}}</p>
+                        <p>gender - {{gender}}</p>
+                        <p>age - {{age}}</p>
+
+                            {{#with mutual_friends}}
+                                {{#each []}}
+                                    <h3>Mutual friend</h3>
+                                    
+                                    <p>id - {{id}}</p>
+                                    <p>name - {{name}}</p>
+                                    <p>gender - {{gender}}</p>
+                                    <p>age - {{age}}</p>
+                                {{/each}}
+                            {{/with}}
+
+                        {{/each}}
+                    {{/with}}
+
+                    <br>
+                    
+                    <br>
+                    <h2>Groups:</h2>
+                    {{#each groups}}
+                    
+                    {{#with []}}
+                    <h2>Group:</h2>
+                    <p>id - {{id}}</p>
+                    <p>name - {{name}}</p>
+                    <p>description - {{description}}</p>
+                    
+                    {{#each members}}
+                    <ul>
+                        <h2>Member:</h2>
+                        <p>id - {{id}}</p>
+                        <p>name - {{name}}</p>
+                        <p>gender - {{gender}}</p>
+                        <p>age - {{age}}</p>
+                    </ul>
+                    {{/each}}
+                    
+                    {{/with}}<br><br>
+                    
+                    {{/each}}
+                
+            {{/each}}
+
+    {{/with}}
+
+{{/with}}
