@@ -1,0 +1,263 @@
+<nav class="mb-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="nav">
+                {{#with navigation.links}}
+                    {{#each []}}
+                    <div class="nav-item">
+                        <a {{#if href}}href={{href}}{{else}}href='Disabled'{{/if}}
+                        {{#if href}}class="nav-link"{{else}}class="nav-link disabled text-muted"{{/if}}>
+                        <h4>{{text}}</h4></a>
+                    </div>
+                    {{/each}}
+                {{/with}}
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="row">
+
+<section class="col-8">
+    <h2 class=" ms-5 mb-5">{{header}}</h2>
+    
+    {{#with contacts_data}}
+    <h3 class=" ms-5 mb-3 ">{{title}}</h3>
+    {{#each buttons}}
+    <button
+        class=" me-3 btn {{#if isPrimary}}btn-warning text-light ms-5{{else}}btn-outline-warning{{/if}}">{{text}}</button>
+    {{/each}}
+    
+    {{#with form.input}}
+    <div class="row ms-5 ">
+        {{#with surname}}
+        <section class="col-6 py-2 ps-0">
+            <div class="">
+                <lable class="form-label">{{label}}</lable>
+                <input placeholder={{placeholder}} class="form-control text-muted">
+                <div class="form-text">{{caption}}</div>
+            </div>
+        </section>
+        {{/with}}
+        {{#with name}}
+        <section class="col-6 py-2 ps-0">
+            <div class="">
+                <lable class="form-label">{{label}}</lable>
+                <input placeholder={{placeholder}} class="form-control text-muted">
+                <div class="form-text">{{caption}}</div>
+            </div>
+        </section>
+        {{/with}}
+    </div>
+    <div class="row ms-5 ">
+        {{#with phone}}
+        <section class="col-6 py-0 ps-0">
+            <div class="">
+                <lable class="form-label">{{label}}</lable>
+                <input placeholder={{placeholder}} class="form-control text-muted">
+                <div class="form-text">{{caption}}</div>
+            </div>
+        </section>
+        {{/with}}
+        {{#with email}}
+        <section class="col-6 py-0 ps-0">
+            <div class="">
+                <lable class="form-label">{{label}}</lable>
+                <input placeholder={{placeholder}} class="form-control text-muted">
+                <div class="form-text">{{caption}}</div>
+            </div>
+        </section>
+        {{/with}}
+    </div>
+    {{/with}}
+<hr class="mt-4 ms-5">
+    {{#each form.switch}}
+        <div class="row">
+            <div class="">
+                <div class="form-check form-switch ms-5 pb-3">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" {{#if
+                        isActive}}checked{{/if}}>
+                    <label class="form-check-label">{{text}}</label>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    {{/with}}     
+<hr class="mt-4 ms-5">
+
+{{#with delivery}}
+    <h2 class=" ms-5 mb-3">{{title}}</h2>
+    <div class="card ms-5 mb-3">
+        <div class="">
+            <div class="row ps-3">
+                {{#each select}}
+                    <section class="col-6">
+                        <label>{{label}}</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>{{placeholder}}</option>
+                            {{#each options}}
+                            <option value="{{value}}">{{text}}</option>
+                            {{/each}}
+                        </select>
+                    </section>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{#each delivery_type}}
+    <div class="ms-5  form-check">
+        <input class="form-check-input" type="radio" >
+        <label class="form-check-label">
+            {{type}}
+        </label>
+    </div>
+    {{/each}}
+<hr class="mt-4 ms-5">
+    {{#with payment}}
+        <h2 class=" ms-5 mb-3">{{title}}</h2>
+        {{#each list}}
+        <div class="ms-5  form-check">
+            <input class="form-check-input" type="radio" >
+            <label class="form-check-label" >
+                {{type}}
+            </label>
+        </div>
+       <div class="ms-5">{{description}}</div>
+        {{/each}}
+        
+    {{/with}}
+<hr class="mt-4 ms-5">
+    {{#with contact}}
+    <h2 class=" ms-5 mb-3">{{title}}</h2>
+    <div class="row ms-5 ">
+        {{#with surname}}
+        <section class="col-6 py-2 ps-0">
+            <div class="">
+                <lable class="form-label">{{label}}</lable>
+                <input placeholder={{placeholder}} class="form-control text-muted">
+                <div class="form-text">{{caption}}</div>
+            </div>
+        </section>
+        {{/with}}
+        {{#with name}}
+        <section class="col-6 py-2 ps-0">
+            <div class="">
+                <lable class="form-label">{{label}}</lable>
+                <input placeholder={{placeholder}} class="form-control text-muted">
+                <div class="form-text">{{caption}}</div>
+            </div>
+        </section>
+        {{/with}}
+        {{#with phone}}
+        <section class="col-6 py-2 ps-0">
+            <div class="">
+                <lable class="form-label">{{label}}</lable>
+                <input placeholder={{placeholder}} class="form-control text-muted">
+                <div class="form-text">{{caption}}</div>
+            </div>
+        </section>
+        {{/with}}
+        {{#with email}}
+        <section class="col-6 py-2 ps-0">
+            <div class="">
+                <lable class="form-label">{{label}}</lable>
+                <input placeholder={{placeholder}} class="form-control text-muted">
+                <div class="form-text">{{caption}}</div>
+            </div>
+        </section>
+        {{/with}}
+<hr class="mt-4 ">
+    {{/with}}
+    {{#with coment}}
+        <div class="">
+            <lable class="form-label">{{label}}</lable>
+            <input placeholder={{ placeholder}} class="form-control text-muted">
+            </div>
+    {{/with}}
+
+{{/with}}
+</section>
+
+{{!-- --------------------------------------------------- --}}
+    <section class="col-4">
+        <div class="row">
+            <div class="card mb-3">
+                <div class="card-body ms-0 ps-2 ">
+                    {{#each action_block}}
+                    <button class="btn {{#if isSuccess}}btn-success{{/if}}
+                                        {{#if isDanger}}btn-danger{{/if}} 
+                                        {{#if isInfo}}btn-info{{/if}} my-1">
+                        {{text}}</button><br>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card ">
+                <div class="card-body ms-0 ps-2">
+                    {{#with total}}
+                    <h3 class="mb-3"><b>{{title}}</b></h3>
+                    {{#each item_list}}
+                    <div>{{name}}: {{price}}</div>
+                    {{/each}}
+                    <hr>
+                    {{#each additional_info}}
+                    <div>{{text}}: {{value}}</div>
+                    {{/each}}
+                    <hr>
+                    {{#with total_price}}
+                    <div>{{text}}: {{value}}</div>
+                    {{/with}}
+                    <hr>
+                    {{#each button}}
+                    <button class="btn {{#if isPrimary}} btn-primary {{else}} btn-outline-primary {{/if}} my-1">
+                        {{text}}</button><br>
+                    {{/each}}
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <div class="row">
+
+    <section class="col-6">
+        <p>Test</p>
+    </section>
+
+    <section class="col-6">
+        <p>Test</p>
+    </section>
+    
+</div>
+ --}}
+
+
+
+
+{{!-- <main class="p-5">
+    <div class="row g-5">
+            <div class="col-12">
+                <div class="">
+                    <lable class="form-label">Email address</lable>
+                    <input class="form-control">
+                    <div class="form-text text-danger">Error. You need to set correct email</div>
+                </div>
+            </div>
+    </div>
+</main> --}}
