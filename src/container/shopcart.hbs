@@ -1,0 +1,100 @@
+<nav class="mb-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="nav">
+                {{#with navigation.links}}
+                {{#each []}}
+                <div class="nav-item">
+                    <a {{#if href}}href={{href}}{{else}}href='Disabled' {{/if}} {{#if href}}class="nav-link"
+                        {{else}}class="nav-link disabled text-muted" {{/if}}>
+                        <h4>{{text}}</h4>
+                    </a>
+                </div>
+                {{/each}}
+                {{/with}}
+                <div class="nav-item ms-2 mt-2"><a>
+                    <h4>Disabled</h4>
+                </a></div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header>
+    {{#with header}}
+    <h1>{{title}}</h1>
+    {{#with button}}
+    <button href={{link}} class="btn btn-outline-dark mt-2">{{text}}</button>
+    {{/with}}
+    {{/with}}
+</header>
+<hr class="ms-4 my-5">
+
+{{> cartGoodsItem}}
+
+<hr class="ms-4 my-5">
+
+{{#with total}}
+    <div class="ms-4">
+        <div class="mb-3 display-6"><b>{{title}}</b></div>
+        <div class="mb-3 display-5"><b>{{amount}}</b></div>
+        <div class="mb-3">{{delivery}}</div>
+        {{#each buttons}}
+            <a href="{{link}}"><button class="mb-3 btn 
+            {{#if isSuccess}}btn-success{{else}}btn-outline-success 
+            {{/if}}">{{text}}</button></a><br>
+        {{/each}}
+
+    </div>
+{{/with}}
+<hr class="ms-4 my-5">
+{{#with goodsOtherBlock}}
+    <div class="display-5 text-center"><b>{{title}}</b></div>
+    <div class="row ms-4">
+        {{#each cards}}
+            <section class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{image}}">
+                     <div class="card-body">
+                        <div class="card-title"><b>{{title}}</b>
+                        {{#if isHot }}
+                        <span class="badge text-bg-warning rounded-pill text-uppercase"> Hot! </span> {{/if}}
+                        {{#if idNew }}
+                        <span class="badge text-bg-primary rounded-pill"> Нове </span> {{/if}}
+                        </div>
+                        <p>{{description}}</p>
+                     </div>
+                </div>
+            </section>
+        {{/each}}    
+    </div>
+{{/with}}
+<hr class="ms-4 my-5">
+{{#with subscribe}}
+<div class="ms-4 row">
+    <div class="card col-12 text-bg-dark">
+        <div class="card-title">
+            <h2>{{header}}</h2>
+        </div>
+        <p>{{description}}</p>
+        {{#with buttons}}
+        {{#each []}}
+        <a href="{{link}}"><button class="btn btn-primary pb-1">{{text}}</button></a><br>
+        {{/each}}
+        {{/with}}
+    </div>
+</div>
+{{/with}}
+<hr class="ms-4 my-5">
+<div class="ms-4 row">
+    {{#each footer}}
+        <section class="nav flex-column col-2">
+            {{#each []}}
+                <div class="nav-item">
+                    <a class="{{#if [3]}}nav-link disabled{{else}}nav-link{{/if}}" href="{{link}}"><div>{{text}}</button></a>
+                </div>            
+            {{/each}}
+        </section>
+    {{/each}}
+</div>
+
