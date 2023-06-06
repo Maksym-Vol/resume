@@ -1,0 +1,122 @@
+<nav class="ms-4 mb-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="nav">
+                {{#with navigation.links}}
+                {{#each []}}
+                <div class="nav-item">
+                    <a {{#if href}}href={{href}}{{else}}href='Disabled' {{/if}} {{#if href}}class="nav-link"
+                        {{else}}class="nav-link disabled text-muted" {{/if}}>
+                        <h4>{{text}}</h4>
+                    </a>
+                </div>
+                {{/each}}
+                {{/with}}
+                <div class="nav-item ms-2 mt-2"><a>
+                        <h4>Disabled</h4>
+                    </a></div>
+            </div>
+        </div>
+    </div>
+</nav>
+<h1 class="ms-4">{{header}}</h1>
+
+<div class="ms-4 ">
+    {{#with purchase}}
+    <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+            <a class="nav-link active">{{tabs.[0]}}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">{{tabs.[1]}}</a>
+        </li>
+    </ul>
+        {{#with actionBlock}}
+            <div class="row">
+                {{#with input}}
+                <section class="col-4">
+                    <input type="text" class="form-control" placeholder={{placeholder}}>
+                </section>
+                {{/with}}
+                {{#each buttons}}
+                    <section class="col">
+                        <button href={{link}}
+                        class=" mx-0 {{#if isSuccess}}btn btn-success{{/if}}
+                                {{#if isOutline}}btn btn-outline-success{{/if}}
+                                {{#if isDanger}}btn btn-outline-danger{{/if}}">{{text}}</button>
+                    </section>
+                {{/each}}
+            </div>
+        {{/with}}
+        <hr class="ms-4 my-5">
+        {{> purchaseItem}} 
+    {{/with}}
+   </div>
+<b><hr class="ms-4 mt-5"></b>
+{{#with userInfo}}
+    <h2 class="ms-4 my-5">{{title}}</h2>
+    {{#with profileData}}
+        <div class="ms-4 card">
+            <h2 class="ms-2 my-2">{{title}}</h2>
+           <div class="card-body ">
+                {{#with fullName}}
+                    <div class="card mb-4">
+                        <div class="card-body row">
+                            <section class="col-3 py-0">
+                                <div>{{surname.title}}</div>
+                                <b><div>{{surname.value}}</div></b>
+                            </section>
+                            <section class="col-3 py-0">
+                                <div>{{name.title}}</div>
+                                <b><div>{{name.value}}</div></b>
+                            </section>
+                            <section class="col-3 py-0">
+                                <div>{{middleName.title}}</div>
+                                <b><div>{{middleName.value}}</div></b>
+                            </section>
+                        </div>
+                    </div>
+                {{/with}}
+                {{#with otherInfo}}
+                <div class="card mb-4">
+                    <div class="card-body row">
+                        <section class="col-3 py-0">
+                            <div>{{birthday.title}}</div>
+                            <b>
+                                <div>{{birthday.value}}</div>
+                            </b>
+                        </section>
+                        <section class="col-3 py-0">
+                            <div>{{sex.title}}</div>
+                            <b>
+                                <div>{{sex.value}}</div>
+                            </b>
+                        </section>
+                        <section class="col-3 py-0">
+                            <div>{{language.title}}</div>
+                            <b>
+                                <div>{{language.value}}</div>
+                            </b>
+                        </section>
+                    </div>
+                </div>
+                {{/with}}
+                {{/with}}
+                
+                <div class="card mb-4">
+                    <div class="card-body row">
+                        {{#each buttons}}
+                        <section class="col-3 py-0">
+                            <button class="btn {{#if isPrimary}}btn-primary{{/if}}
+                                                {{#if isSecondary}}btn-outline-secondary{{/if}}
+                                                {{#if isDanger}}btn-outline-danger{{/if}}">{{text}}</button>
+                        </section>
+                    {{/each}}
+                    </div>
+                </div>
+            </div>
+           </div>
+        
+        </div>
+{{/with}}
+
