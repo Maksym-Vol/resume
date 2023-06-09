@@ -1,20 +1,5 @@
 <main>
-    <div class="card mb-5">
-        <div class="card-body">
-            <div class="nav">
-                {{#with navigation.links}}
-                    {{#each []}}
-                        <div class="nav-item">
-                            <a href={{href}} class="nav-link"><h2>{{text}}</h2></a>
-                        </div>
-                    {{/each}}
-                {{/with}}
-                <div class="nav-item">
-                    <a href='#' class="nav-link disabled"><h2>Disabled</h2></a>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{> navigation}}
 
     <div>
         {{#with newsBlock}}
