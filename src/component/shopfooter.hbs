@@ -1,0 +1,14 @@
+<hr class="ms-4 my-4">
+<div class="ms-4 row">
+    {{#each footer}}
+    <section class="nav flex-column col-2">
+        {{#each []}}
+        <div class="nav-item">
+            <a class="{{#if [3]}}nav-link disabled{{else}}nav-link{{/if}}" href="{{link}}">
+                <div>{{text}}</button>
+            </a>
+        </div>
+        {{/each}}
+    </section>
+    {{/each}}
+</div>

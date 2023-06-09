@@ -1,24 +1,4 @@
-<nav class="mb-5">
-    <div class="card">
-        <div class="card-body">
-            <div class="nav">
-                {{#with navigation.links}}
-                {{#each []}}
-                <div class="nav-item">
-                    <a {{#if href}}href={{href}}{{else}}href='Disabled' {{/if}} {{#if href}}class="nav-link"
-                        {{else}}class="nav-link disabled text-muted" {{/if}}>
-                        <h4>{{text}}</h4>
-                    </a>
-                </div>
-                {{/each}}
-                {{/with}}
-                <div class="nav-item ms-2 mt-2"><a>
-                    <h4>Disabled</h4>
-                </a></div>
-            </div>
-        </div>
-    </div>
-</nav>
+{{> navigation}}
 
 <header>
     {{#with header}}
@@ -85,16 +65,4 @@
     </div>
 </div>
 {{/with}}
-<hr class="ms-4 my-5">
-<div class="ms-4 row">
-    {{#each footer}}
-        <section class="nav flex-column col-2">
-            {{#each []}}
-                <div class="nav-item">
-                    <a class="{{#if [3]}}nav-link disabled{{else}}nav-link{{/if}}" href="{{link}}"><div>{{text}}</button></a>
-                </div>            
-            {{/each}}
-        </section>
-    {{/each}}
-</div>
-
+{{> shopfooter}}
