@@ -78,35 +78,12 @@
 </div>
 {{/with}}
 <hr class="my-5">
-{{#with service}}
-<div class="row text-center">
-    <div class="card col-12 text-bg-success">
-        <div class="card-title">
-            <h2>{{title}}</h2>
-        </div>
-        <p>{{description}}</p>
-        {{#with buttons}}
-        {{#each []}}
-        <a href="{{link}}"><button class="btn btn-primary pb-1">{{text}}</button></a><br>
-        {{/each}}
-        {{/with}}
-    </div>
+<div>
+    {{> service}}
 </div>
-{{/with}}
 <hr class="my-5">
 </main>
 <footer>
-   <div class="row">
-    {{#each footer}}
-        <div class="card-body">
-            <div class="col-1 list-group">
-                {{#each []}}
-                <a href="{{link}}" class="list-item" target="_blank">
-                    <button class="btn btn-link">{{text}}</button>
-                    {{/each}}
-            </div>
-        </div>
-    {{/each}}
-   </div>
+   {{> shopfooter}}
 </footer>
 
