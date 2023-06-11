@@ -1,20 +1,4 @@
-<nav class="mb-5">
-    <div class="card">
-        <div class="card-body">
-            <div class="nav">
-                {{#with navigation.links}}
-                    {{#each []}}
-                    <div class="nav-item">
-                        <a {{#if href}}href={{href}}{{else}}href='Disabled'{{/if}}
-                        {{#if href}}class="nav-link"{{else}}class="nav-link disabled text-muted"{{/if}}>
-                        <h4>{{text}}</h4></a>
-                    </div>
-                    {{/each}}
-                {{/with}}
-            </div>
-        </div>
-    </div>
-</nav>
+{{> navigation}}
 <div class="row">
 
 <section class="col-8">
@@ -175,6 +159,33 @@
     {{/with}}
 
 {{/with}}
+<hr class="mt-4 ">
+{{#with coupon}}
+    <h3>{{title}}</h3>
+    {{#with select.availabel_coupon}}
+        <div class="form-group">
+            <lable class="form-label">{{label}}</lable>
+            <select class="form-select form-select-lg" aria-label="Default select example">
+                <option selected>{{placeholder}}</option>
+                {{#each options}}
+                <option value={{value}}>{{text}}</option>
+                {{/each}}
+            </select>
+        </div>
+    {{/with}}
+    <br>
+    {{#with select.friend_coupon}}
+    <div class="form-group">
+        <lable class="form-label">{{label}}</lable>
+        <select class="form-select form-select-sm" aria-label="Default select example">
+            <option selected>{{placeholder}}</option>
+            {{#each options}}
+            <option value={{value}}>{{text}}</option>
+            {{/each}}
+        </select>
+    </div>
+    {{/with}}
+{{/with}}
 </section>
 
 {{!-- --------------------------------------------------- --}}
@@ -217,47 +228,5 @@
             </div>
         </div>
     </section>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{!-- <div class="row">
-
-    <section class="col-6">
-        <p>Test</p>
-    </section>
-
-    <section class="col-6">
-        <p>Test</p>
-    </section>
-    
-</div>
- --}}
-
-
-
-
-{{!-- <main class="p-5">
-    <div class="row g-5">
-            <div class="col-12">
-                <div class="">
-                    <lable class="form-label">Email address</lable>
-                    <input class="form-control">
-                    <div class="form-text text-danger">Error. You need to set correct email</div>
-                </div>
-            </div>
-    </div>
-</main> --}}
+{{> shopfooter}}
