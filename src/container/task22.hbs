@@ -1,16 +1,11 @@
 <main>
-
     {{#with page_header}}
     
         <h1 class="display-1 text-center"><b>{{title}}</b></h1>
         <p class="text-uppercase text-center">{{description}}</p>
-    
     {{/with}}
-
     {{#with section}}
-
     <div class="card">
-
                 <div class="card-body">
                     {{#with about_us.title_list}}
 
@@ -28,19 +23,13 @@
 
                 </div>
     </div><br>
-
         <div class="card">
-        
             <div class="card-body">
-                
                     <div class="display-5 text-muted">{{advantage.title}}</div><br>
-
-                    {{#with advantage}}
-
+                {{#with advantage}}
                     <div class="card">
                         <div class="card-body">
                             {{#with efficiency}}
-
                                 <div class="display-4 text-muted">{{title}}</div><br>
                                 <h6>{{sub_title}}</h6><br>
                                 <p>{{description}}</p><br>
@@ -48,11 +37,8 @@
                                     {{button}}
                                 </button><br><br>
                             {{/with}}
-
                         </div>
-
                     </div><br>
-
                     <div class="card">
                         <div class="card-body">
                             {{#with innovation}}
@@ -83,11 +69,31 @@
                         </div>
                     </div>
 
-                    {{/with}}
-                
+                {{/with}}
             </div>
         </div><br>
-
+    <div class="card">
+        <div class="card-body">
+            {{#with agreement}}
+                <div class="display-5 mb-2">{{title}}</div>
+                <div class="card">
+                    <div class="card-body">
+                        {{#with info}}
+                            <h5>{{sub_title}}</h5>
+                            <div class="card">
+                                <div class="card-body">
+                                    {{#with detail}}
+                                        <p class="mb-3">{{text}}</p>
+                                        <button class="btn btn-success">{{button}}</button>
+                                    {{/with}}
+                                </div>
+                            </div>
+                        {{/with}}
+                    </div>
+                </div>
+            {{/with}}
+        </div>
+    </div>
 
 
     {{/with}}

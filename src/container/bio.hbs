@@ -1,98 +1,126 @@
-<big><h1>{{name}}</h1></big>
-<div>
-   <i>
-    <p>Date of birth: {{birthdate}}</p>
-    <p>Place of birth: {{birthplace}}</p>
-    <p>Date of death: {{deathdate}}</p>
-    <p>Place of birth: {{deathplace}}</p>
-    <p>Nationality: {{nationality}}</p>
-    <p>Occupation: {{occupation}}</p>
-    </i>
-    <h2>Known for:</h2>
-    {{#each known_for}}
-        <ul><li>{{this}}</li></ul>
-    {{/each}}
-</div>
-
-<div>
-    <h2>Education:</h2>
-    {{#with education.[0]}}
-    <ul>
-        <li>Degree - {{degree}}</li>
-        <li>Field - {{field}}</li>
-        <li>Institution - {{institution}}</li>
-        <li>Year - {{year}}</li>
-    </ul>
-    {{/with}}
-</div>
-
-<div>
-    <h2>Notable publications:</h2>
-    {{#each notable_publications}}
-    <ul>
-        <li>"{{title}}" - {{year}} year, publisher - {{publisher}}</li>
-    </ul>
-    {{/each}}
-</div>
-
-<div>
-    <h2>Partners:</h2>
-    {{#each partners}}
-    <ul>
-        <li>"{{name}}" - {{years}} years, relationship - {{relationship}}</li>
-    </ul>
-    {{/each}}
-</div>
-
-<div>
-    <h2>Awards:</h2>
-    {{#with awards.[0]}}
-    <ul>
-        <li>Title - {{title}}</li>
-        <li>Year - {{year}}</li>
-        <li>Description - {{description}}</li>
-    </ul>
-    {{/with}}
-</div>
-
-<div>
-    <h2>Influences:</h2>
-    {{#each influenced}}
-        <ul>
-            <li>{{this}}</li>
-        </ul>
-    {{/each}}
-</div>
-
-<div>
-    <h2>Quotes:</h2>
-    {{#each quotes}}
-    <ul>
-        <li>{{this}}</li>
-    </ul>
-    {{/each}}
-</div>
-
-<div>
-    <h2>Major discoveries</h2>
-    {{#with major_discoveries.[0]}}
-    <ul>
-        <li>Title - {{title}}</li>
-        <li>Year - {{year}}</li>
-        <li>Description - {{description}}</li>
-    </ul>
-    {{/with}}
-</div>
-
-<div>
-    <h2>Contributions</h2>
-    {{#with contributions}}
-    <ul>
-        <li>Title - {{title}}</li>
-        <li>Year - {{year}}</li>
-        <li>Description - {{description}}</li>
-        <li>field - {{field}}</li>
-    {{/with}}
-
-    </ul>
+<div class="card m-5">
+    <div class="card-body">
+        <big>
+            <h1 class="display-3">{{name}}</h1>
+        </big>
+       
+            <select class="form-select" aria-label="Default select example">
+                <option selected><b>Information</b></option>
+                <option value="1">Date of birth: {{birthdate}}</option>
+                <option value="2">Place of birth: {{birthplace}}</option>
+                <option value="3">Date of death: {{deathdate}}</option>
+                <option value="4">Place of birth: {{deathplace}}</option>
+                <option value="5">Nationality: {{nationality}}</option>
+                <option value="6">Occupation: {{occupation}}</option>
+            </select>
+            <div class="card my-4">
+                <div class="card-body">
+                    <h2>Known for:</h2>
+                    {{#each known_for}}
+                    <ul>
+                        <li>{{this}}</li>
+                    </ul>
+                    {{/each}}
+                </div>
+            </div>
+      
+        
+        <div class="card">
+            <div class="card-body">
+                <h2>Education:</h2>
+                {{#with education.[0]}}
+                <ul>
+                    <li>Degree - {{degree}}</li>
+                    <li>Field - {{field}}</li>
+                    <li>Institution - {{institution}}</li>
+                    <li>Year - {{year}}</li>
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+        
+        <div class="card my-4">
+        <div class="card-body">
+            <h2>Notable publications:</h2>
+            {{#each notable_publications}}
+            <ul>
+                <li>"{{title}}" - {{year}} year, publisher - {{publisher}}</li>
+            </ul>
+            {{/each}}
+        </div>
+        </div>
+        
+        <div class="card my-4">
+            <div class="card-body">
+            <h2>Partners:</h2>
+            {{#each partners}}
+            <ul>
+                <li>"{{name}}" - {{years}} years, relationship - {{relationship}}</li>
+            </ul>
+            {{/each}}
+        </div>
+        </div>
+        <div class="card my-4">
+            <div class="card-body">
+            <h2>Awards:</h2>
+            {{#with awards.[0]}}
+            <ul>
+                <li>Title - {{title}}</li>
+                <li>Year - {{year}}</li>
+                <li>Description - {{description}}</li>
+            </ul>
+            {{/with}}
+        </div>
+        </div>
+        
+        <div class="card my-4">
+            <div class="card-body">
+            <h2>Influences:</h2>
+            {{#each influenced}}
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            {{/each}}
+        </div>
+        </div>
+        
+        <div class="card my-4">
+            <div class="card-body">
+            <h2>Quotes:</h2>
+            {{#each quotes}}
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            {{/each}}
+        </div>
+        </div>
+        
+        <div class="card my-4">
+            <div class="card-body">
+            <h2>Major discoveries</h2>
+            {{#with major_discoveries.[0]}}
+            <ul>
+                <li>Title - {{title}}</li>
+                <li>Year - {{year}}</li>
+                <li>Description - {{description}}</li>
+            </ul>
+            {{/with}}
+        </div>
+        </div>
+        
+    <div class="card my-4">
+    <div class="card-body">
+            <h2>Contributions</h2>
+            {{#with contributions}}
+            <ul>
+                <li>Title - {{title}}</li>
+                <li>Year - {{year}}</li>
+                <li>Description - {{description}}</li>
+                <li>field - {{field}}</li>
+                {{/with}}
+        
+            </ul>
+        </div>
+    </div>
+    </div>
 </div>
